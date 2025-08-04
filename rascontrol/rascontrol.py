@@ -503,7 +503,8 @@ class RasController(object):
         Returns name of current plan
         :return: string
         """
-        pass
+        return self.com_rc.CurrentPlanFile()
+        
  
     def get_plans(self, basedir=None):
         """
@@ -588,7 +589,7 @@ class RasController(object):
         river_code = 2  # The value of this term appears to do nothing
         _, profile_names = self.com_rc.Output_GetProfiles(river_code, None)
 
-        print(profile_names)
+        #print(profile_names)
 
         profiles = []
         for i, name in enumerate(profile_names):

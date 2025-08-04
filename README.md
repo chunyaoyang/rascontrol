@@ -7,6 +7,26 @@ use the [parserasgeo](https://github.com/mikebannis/parserasgeo) library. The co
 be used for sensitivity studies, Monte Carlo analyses, and real-time predication of floodwater depths when paired with
 appropriate rainfall data and hydrology.  
 
+
+## About This Fork
+
+This is an actively maintained fork of [mikebannis/rascontrol](https://github.com/mikebannis/rascontrol), hosted at [chunyaoyang/rascontrol](https://github.com/chunyaoyang/rascontrol).
+
+### Key Change:
+- Modified `get_current_plan()` to return the **filename** of the current plan as a string, instead of a `Plan` object:
+  ```python
+  def get_current_plan(self):
+      """
+      Returns name of current plan
+      :return: string
+      """
+      return self.com_rc.CurrentPlanFile()
+  ```
+
+This change makes it easier to retrieve the path to the currently selected plan directly, which is useful in workflows that use the plan file for external analysis or postprocessing.
+
+This fork will continue development and welcomes contributions.
+
 ## Installation
 The appropriate version of HEC-RAS must already be installed to use rascontrol.
 
